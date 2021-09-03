@@ -30,6 +30,13 @@ body {
   );
 }
 
+.loadingText {
+  font-size: 50px;
+  color: #fff;
+  position: absolute;
+  z-index: 99;
+}
+
 main {
   // color: #fff;
   width: 900px;
@@ -39,6 +46,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  filter: blur(0px);
 
   .describe,
   .luckyGridView,
@@ -207,7 +215,6 @@ main {
         font-size: 12px;
       }
     }
-
 
     .gainList {
       ul {

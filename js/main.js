@@ -2,6 +2,7 @@ import { Gifts } from "./OOP/Gifts.js";
 import { Mineral } from "./OOP/Mineral.js";
 import { Core } from "./OOP/Core.js";
 import { CurrencyDB } from "./OOP/CurrencyDB.js";
+import { Percentage } from "./OOP/Percentage.js";
 
 // 所有的礼物业务封装
 const gifts = new Gifts();
@@ -17,6 +18,11 @@ const initUI = async () => {
   await gifts.show();
   mineral.showTotal();
   mineral.showUnit();
+};
+
+// 百分比加载
+const loading = () => {
+  new Percentage();
 };
 
 // 抽奖逻辑
@@ -42,6 +48,7 @@ const handleRun = (e) => {
 
 const init = () => {
   initUI();
+  loading();
   const drawDom = document.querySelector(".luckyDraw");
   drawDom.addEventListener("click", handleRun);
 };

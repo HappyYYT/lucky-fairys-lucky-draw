@@ -24,6 +24,13 @@ body {
   background: repeating-radial-gradient(circle at 50%, #99725c, #99725c 10px, #fffdd0 10px, #fffdd0 50px);
 }
 
+.loadingText {
+  font-size: 50px;
+  color: #fff;
+  position: absolute;
+  z-index: 99;
+}
+
 main {
   width: 900px;
   height: 600px;
@@ -31,6 +38,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  filter: blur(0px);
 }
 
 main .describe,
