@@ -59,7 +59,7 @@ main .describe .title::before {
   width: 20px;
   height: 20px;
   content: "";
-  background-image: url("./img/ribbon.svg");
+  background-image: url("../img/ribbon.svg");
   background-size: 20px 20px;
   position: absolute;
   left: -30px;
@@ -158,5 +158,39 @@ main .luckyGridView .container .luckyDraw:active {
 
 main .luckyGridView .container .luckyDraw h1 {
   margin-bottom: 8px;
+}
+
+@media (max-width: 640px) {
+  main .gainList ul li {
+    font-size: 14px;
+    padding-left: 5%;
+  }
+  main .luckyGridView .container .luckyDraw h1 {
+    font-size: 24px;
+  }
+  main .luckyGridView .container p {
+    font-size: 12px;
+  }
+  main .luckyGridView .container .gift img {
+    width: 48px;
+  }
+}
+
+@media (max-width: 425px) {
+  main .describe .title {
+    font-size: 16px;
+  }
+  main .describe .minNum {
+    font-size: 12px;
+  }
+  main .gainList ul li {
+    font-size: 12px;
+  }
+  main .luckyGridView .container .luckyDraw h1 {
+    font-size: 16px;
+  }
+  main .luckyGridView .container .gift img {
+    width: 28px;
+  }
 }
 /*# sourceMappingURL=player.css.map */
