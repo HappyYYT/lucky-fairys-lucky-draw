@@ -1,5 +1,5 @@
 export class Mineral {
-  constructor({total, unit}) {
+  constructor({ total, unit }) {
     // 总矿石数
     this.totalMineral = total;
     // 抽奖一次耗费的矿石数
@@ -7,7 +7,7 @@ export class Mineral {
   }
 
   checkEnough() {
-    return this.getTotal() >= 200;
+    return this.getTotal() >= this.oncePrice;
   }
 
   getTotal() {
