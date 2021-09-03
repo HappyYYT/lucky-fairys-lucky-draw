@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to LuckyFairy's LuckyDraw</title>
+    <link rel="stylesheet" href="./css/player.css" />
+  </head>
+  <body>
+    <main>
+      <section class="describe">
+        <h1><span class="title">幸运抽奖</span></h1>
+        <p class="minNum">当前矿石数：<span class="curMin"></span>💎</p>
+      </section>
+      <section id="gainList" class="gainList">
+        <!-- <ul>
+          <li>获得了XXX，xxxx年xx月xx日xx时xx分xx秒</li>
+        </ul> -->
+      </section>
+      <div id="luckyGridView" class="luckyGridView">
+        <div class="container">
+          <div class="btn gift" order="1"></div>
+          <div class="btn gift" order="2"></div>
+          <div class="btn gift" order="3"></div>
+          <div class="btn gift" order="8"></div>
+          <div id="luckyDraw" class="btn luckyDraw">
+            <h1>抽奖</h1>
+            <p><span class="perMin"></span>💎矿石/次</p>
+          </div>
+          <div class="btn gift" order="4"></div>
+          <div class="btn gift" order="7"></div>
+          <div class="btn gift" order="6"></div>
+          <div class="btn gift" order="5"></div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

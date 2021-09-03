@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body,
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  // background: #99725c;
+  background: repeating-radial-gradient(
+    circle at 50%,
+    #99725c,
+    #99725c 10px,
+    #fffdd0 10px,
+    #fffdd0 50px
+  );
+}
+
+main {
+  // color: #fff;
+  width: 900px;
+  height: 600px;
+  // background: #99725c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .describe,
+  .luckyGridView,
+  .gainList {
+    width: 80%;
+  }
+
+  .describe {
+    width: 40%;
+    margin-bottom: 20px;
+    padding: 12px;
+    text-align: center;
+    color: #4d1f00;
+    font-weight: bolder;
+    background: #e6dad4;
+    border-radius: 5px;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 30%);
+
+    .title {
+      position: relative;
+      &::before {
+        width: 20px;
+        height: 20px;
+        content: "";
+        background-image: url("./img/ribbon.svg");
+        background-size: 20px 20px;
+        position: absolute;
+        left: -30px;
+        transform: rotate(-30deg);
+      }
+    }
+
+    .minNum {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  }
+
+  .gainList {
+    ul {
+      padding: 10px 0 10px 0;
+      margin-bottom: 15px;
+      color: #005479;
+      font-weight: bolder;
+      background: #e6dad4;
+      border-radius: 5px;
+      box-shadow: 2px 4px 5px rgba(0, 0, 0, 30%);
+      max-height: 106.5px;
+      overflow: auto;
+      li {
+        // width: 50%;
+        // margin: auto;
+        padding-left: 25%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        &::before {
+          content: "🔔";
+        }
+      }
+    }
+  }
+
+  .luckyGridView {
+    min-height: 480px;
+    background: #633416;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 32px #4d1f00 outset;
+
+    .container {
+      width: 93%;
+      min-height: 380px;
+      border-radius: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: space-between;
+
+      .btn {
+        width: 32%;
+        height: 120px;
+        background: #6d320c;
+        border-radius: 5px;
+        border: 16px groove #4d1f00;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      p {
+        width: 100%;
+        font-size: 14px;
+        color: #fffdd0;
+        text-align: center;
+      }
+
+      h1 {
+        color: #cecca1;
+      }
+
+      .gift {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        img {
+          width: 64px;
+        }
+      }
+      .luckyDraw {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+
+        &:active {
+          transform: scale(0.98);
+        }
+
+        h1 {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}

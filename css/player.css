@@ -1,0 +1,162 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body,
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: repeating-radial-gradient(circle at 50%, #99725c, #99725c 10px, #fffdd0 10px, #fffdd0 50px);
+}
+
+main {
+  width: 900px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+main .describe,
+main .luckyGridView,
+main .gainList {
+  width: 80%;
+}
+
+main .describe {
+  width: 40%;
+  margin-bottom: 20px;
+  padding: 12px;
+  text-align: center;
+  color: #4d1f00;
+  font-weight: bolder;
+  background: #e6dad4;
+  border-radius: 5px;
+  box-shadow: 2px 4px 5px black;
+}
+
+main .describe .title {
+  position: relative;
+}
+
+main .describe .title::before {
+  width: 20px;
+  height: 20px;
+  content: "";
+  background-image: url("./img/ribbon.svg");
+  background-size: 20px 20px;
+  position: absolute;
+  left: -30px;
+  transform: rotate(-30deg);
+}
+
+main .describe .minNum {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+main .gainList ul {
+  padding: 10px 0 10px 0;
+  margin-bottom: 15px;
+  color: #005479;
+  font-weight: bolder;
+  background: #e6dad4;
+  border-radius: 5px;
+  box-shadow: 2px 4px 5px black;
+  max-height: 106.5px;
+  overflow: auto;
+}
+
+main .gainList ul li {
+  padding-left: 25%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+main .gainList ul li::before {
+  content: "🔔";
+}
+
+main .luckyGridView {
+  min-height: 480px;
+  background: #633416;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 32px #4d1f00 outset;
+}
+
+main .luckyGridView .container {
+  width: 93%;
+  min-height: 380px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+main .luckyGridView .container .btn {
+  width: 32%;
+  height: 120px;
+  background: #6d320c;
+  border-radius: 5px;
+  border: 16px groove #4d1f00;
+  cursor: pointer;
+  user-select: none;
+}
+
+main .luckyGridView .container p {
+  width: 100%;
+  font-size: 14px;
+  color: #fffdd0;
+  text-align: center;
+}
+
+main .luckyGridView .container h1 {
+  color: #cecca1;
+}
+
+main .luckyGridView .container .gift {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+main .luckyGridView .container .gift img {
+  width: 64px;
+}
+
+main .luckyGridView .container .luckyDraw {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+main .luckyGridView .container .luckyDraw:active {
+  transform: scale(0.98);
+}
+
+main .luckyGridView .container .luckyDraw h1 {
+  margin-bottom: 8px;
+}
+/*# sourceMappingURL=player.css.map */

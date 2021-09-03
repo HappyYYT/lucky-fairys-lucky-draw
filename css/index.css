@@ -1,0 +1,191 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #4d1f00;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  width: 300px;
+  height: 78px;
+  line-height: 46px;
+}
+
+a:hover {
+  color: #fff;
+}
+
+.stream {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#cream {
+  transform: rotate(180deg);
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin h1 {
+  color: #cecca1;
+  text-transform: uppercase;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+  color: #fffdd0;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signin .btn-primary {
+  width: 100%;
+  outline: none;
+  background-color: #6d320c;
+  border: 16px groove #4d1f00;
+}
+
+.form-signin .btn-primary:focus {
+  box-shadow: 0 0 0 0.25rem rgba(99, 52, 22, 0.5);
+}
+
+#stage {
+  position: relative;
+}
+
+#stage img {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+#stage button {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+}
+
+#inner {
+  position: relative;
+  background-color: #999;
+  clip-path: circle(120px at center);
+}
+
+#inner #cover {
+  position: absolute;
+  background-color: #fffdd0;
+  width: 100%;
+  height: 100%;
+  bottom: 10%;
+  transition: all 1s;
+  box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#inner #cover #text {
+  position: absolute;
+  bottom: 30%;
+  font-size: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.4;
+  font-weight: bold;
+}
+
+#inner #cover #text .mini {
+  color: #99725c;
+}
+
+#inner #cover #detail {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  height: 10px;
+  bottom: 0;
+}
+
+#inner #cover #handle {
+  position: absolute;
+  background: #ccc;
+  bottom: -2px;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.1);
+  height: 8px;
+  left: 50%;
+  margin-left: -15px;
+  width: 30px;
+  cursor: pointer;
+}
+
+#info,
+#refresh {
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#info {
+  left: 40px;
+}
+
+#refresh {
+  right: 40px;
+}
+
+#live2d {
+  cursor: grab;
+  height: 300px;
+  width: 300px;
+}
+
+#live2d:active {
+  cursor: grabbing;
+}
+
+.noDisplay {
+  display: none;
+}
+
+.account {
+  color: #cecca1;
+  padding-bottom: 10px;
+}
+/*# sourceMappingURL=index.css.map */
