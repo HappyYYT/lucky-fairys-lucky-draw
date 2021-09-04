@@ -50,5 +50,6 @@ export class Gifts {
       gifts[i].appendChild(img);
       gifts[i].appendChild(p);
     }
+    // await new Promise(resolve => {});
   }
 }

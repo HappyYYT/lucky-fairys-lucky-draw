@@ -1,0 +1,29 @@
+@media (max-width: 640px) {
+  main {
+    .gainList {
+      ul {
+        li {
+          font-size: 14px;
+          padding-left: 5%;
+        }
+      }
+    }
+    .luckyGridView {
+      .container {
+        .luckyDraw {
+          h1 {
+            font-size: 24px;
+          }
+        }
+        p {
+          font-size: 12px;
+        }
+        .gift {
+          img {
+            width: 48px;
+          }
+        }
+      }
+    }
+  }
+}

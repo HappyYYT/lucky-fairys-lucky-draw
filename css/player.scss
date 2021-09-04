@@ -35,6 +35,16 @@ body {
   color: #fff;
   position: absolute;
   z-index: 99;
+  opacity: 1;
+}
+
+.mask {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background: #4d1f00;
+  z-index: 2;
+  opacity: 1;
 }
 
 main {
@@ -46,7 +56,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  filter: blur(0px);
+  // filter: blur(30px);
 
   .describe,
   .luckyGridView,
@@ -94,7 +104,7 @@ main {
       background: #e6dad4;
       border-radius: 5px;
       box-shadow: 2px 4px 5px rgba(0, 0, 0, 30%);
-      max-height: 106.5px;
+      max-height: 84.5px;
       overflow: auto;
       li {
         // width: 50%;
@@ -169,71 +179,6 @@ main {
 
         h1 {
           margin-bottom: 8px;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 640px) {
-  main {
-    .gainList {
-      ul {
-        li {
-          font-size: 14px;
-          padding-left: 5%;
-        }
-      }
-    }
-    .luckyGridView {
-      .container {
-        .luckyDraw {
-          h1 {
-            font-size: 24px;
-          }
-        }
-        p {
-          font-size: 12px;
-        }
-        .gift {
-          img {
-            width: 48px;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 425px) {
-  main {
-    .describe {
-      .title {
-        font-size: 16px;
-      }
-      .minNum {
-        font-size: 12px;
-      }
-    }
-
-    .gainList {
-      ul {
-        li {
-          font-size: 12px;
-        }
-      }
-    }
-    .luckyGridView {
-      .container {
-        .luckyDraw {
-          h1 {
-            font-size: 16px;
-          }
-        }
-        .gift {
-          img {
-            width: 28px;
-          }
         }
       }
     }

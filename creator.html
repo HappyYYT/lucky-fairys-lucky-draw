@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello, Creator | LuckyFairy's LuckyDraw</title>
+    <link rel="stylesheet" href="./css/player.css" />
+    <link rel="stylesheet" href="./css/playerHandle.css" />
+  </head>
+  <body>
+    <div class="loadingText">0%</div>
+    <div class="mask"></div>
+    <div class="handleLeft">
+      <div class="container">
+        <div class="giftSet">
+          <table>
+            <tr>
+              <td rowspan="3">奖池1：</td>
+              <td>
+                <input type="file" class="fileSelect" accept="image/*" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="giftName" placeholder="奖品名" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="text"
+                  class="rate"
+                  placeholder="中奖概率"
+                  value="12.5"
+                /><span class="unit">%</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="giftSet">
+          <table>
+            <tr>
+              <td rowspan="3">奖池2：</td>
+              <td>
+                <input type="file" class="fileSelect" accept="image/*" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="giftName" placeholder="奖品名" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="rate" placeholder="中奖概率" /><span
+                  class="unit"
+                  >%</span
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="giftSet">
+          <table>
+            <tr>
+              <td rowspan="3">奖池3：</td>
+              <td>
+                <input type="file" class="fileSelect" accept="image/*" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="giftName" placeholder="奖品名" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="rate" placeholder="中奖概率" /><span
+                  class="unit"
+                  >%</span
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="giftSet">
+          <table>
+            <tr>
+              <td rowspan="3">奖池4：</td>
+              <td>
+                <input type="file" class="fileSelect" accept="image/*" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="giftName" placeholder="奖品名" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="rate" placeholder="中奖概率" /><span
+                  class="unit"
+                  >%</span
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="giftSet">
+          <table>
+            <tr>
+              <td rowspan="3">奖池5：</td>
+              <td>
+                <input type="file" class="fileSelect" accept="image/*" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="giftName" placeholder="奖品名" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="rate" placeholder="中奖概率" /><span
+                  class="unit"
+                  >%</span
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <main>
+      <section class="describe">
+        <h1><span class="title">幸运抽奖</span></h1>
+        <p class="minNum">当前矿石数：<span class="curMin"></span>💎</p>
+      </section>
+      <section id="gainList" class="gainList">
+        <!-- <ul>
+          <li>获得了Switch，xxxx年xx月xx日xx时xx分xx秒</li>
+        </ul> -->
+      </section>
+      <div id="luckyGridView" class="luckyGridView">
+        <div class="container">
+          <div class="btn gift" order="1"></div>
+          <div class="btn gift" order="2"></div>
+          <div class="btn gift" order="3"></div>
+          <div class="btn gift" order="8"></div>
+          <div id="luckyDraw" class="btn luckyDraw">
+            <h1>测试</h1>
+            <p><span class="perMin"></span>💎矿石/次</p>
+          </div>
+          <div class="btn gift" order="4"></div>
+          <div class="btn gift" order="7"></div>
+          <div class="btn gift" order="6"></div>
+          <div class="btn gift" order="5"></div>
+        </div>
+      </div>
+    </main>
+    <div class="handleRight">
+      <div class="container">
+        <div class="giftSet">
+          <table>
+            <tr>
+              <td rowspan="3">奖池6：</td>
+              <td>
+                <input type="file" class="fileSelect" accept="image/*" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="giftName" placeholder="奖品名" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="rate" placeholder="中奖概率" /><span
+                  class="unit"
+                  >%</span
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="giftSet">
+          <table>
+            <tr>
+              <td rowspan="3">奖池7：</td>
+              <td>
+                <input type="file" class="fileSelect" accept="image/*" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="giftName" placeholder="奖品名" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="rate" placeholder="中奖概率" /><span
+                  class="unit"
+                  >%</span
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="giftSet">
+          <table>
+            <tr>
+              <td rowspan="3">奖池8：</td>
+              <td>
+                <input type="file" class="fileSelect" accept="image/*" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="giftName" placeholder="奖品名" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="rate" placeholder="中奖概率" /><span
+                  class="unit"
+                  >%</span
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="giftSet">
+          <table>
+            <tr>
+              <td>当前矿石数:</td>
+              <td><input type="text" class="mineralInput"/></td>
+            </tr>
+            <tr>
+              <td>每次消耗矿石数:</td>
+              <td><input type="text" class="mineralInput"/></td>
+            </tr>
+            <tr>
+              <td rowspan="2">
+                <button id="makeSure">确定</button>
+
+              </td>
+            </tr>
+          </table>
+        </div>
+    <script type="module" src="./js/main4Creator.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+@media (max-width: 640px) {
+  main .gainList ul li {
+    font-size: 14px;
+    padding-left: 5%;
+  }
+  main .luckyGridView .container .luckyDraw h1 {
+    font-size: 24px;
+  }
+  main .luckyGridView .container p {
+    font-size: 12px;
+  }
+  main .luckyGridView .container .gift img {
+    width: 48px;
+  }
+}
+/*# sourceMappingURL=adaptive-640px.css.map */

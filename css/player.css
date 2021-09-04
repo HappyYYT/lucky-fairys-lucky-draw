@@ -29,6 +29,16 @@ body {
   color: #fff;
   position: absolute;
   z-index: 99;
+  opacity: 1;
+}
+
+.mask {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background: #4d1f00;
+  z-index: 2;
+  opacity: 1;
 }
 
 main {
@@ -38,7 +48,6 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  filter: blur(0px);
 }
 
 main .describe,
@@ -87,7 +96,7 @@ main .gainList ul {
   background: #e6dad4;
   border-radius: 5px;
   box-shadow: 2px 4px 5px black;
-  max-height: 106.5px;
+  max-height: 84.5px;
   overflow: auto;
 }
 
@@ -166,39 +175,5 @@ main .luckyGridView .container .luckyDraw:active {
 
 main .luckyGridView .container .luckyDraw h1 {
   margin-bottom: 8px;
-}
-
-@media (max-width: 640px) {
-  main .gainList ul li {
-    font-size: 14px;
-    padding-left: 5%;
-  }
-  main .luckyGridView .container .luckyDraw h1 {
-    font-size: 24px;
-  }
-  main .luckyGridView .container p {
-    font-size: 12px;
-  }
-  main .luckyGridView .container .gift img {
-    width: 48px;
-  }
-}
-
-@media (max-width: 425px) {
-  main .describe .title {
-    font-size: 16px;
-  }
-  main .describe .minNum {
-    font-size: 12px;
-  }
-  main .gainList ul li {
-    font-size: 12px;
-  }
-  main .luckyGridView .container .luckyDraw h1 {
-    font-size: 16px;
-  }
-  main .luckyGridView .container .gift img {
-    width: 28px;
-  }
 }
 /*# sourceMappingURL=player.css.map */
