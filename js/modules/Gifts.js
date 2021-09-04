@@ -33,14 +33,10 @@ export class Gifts {
     return gifts;
   }
 
-  async show(gifts = this.get()) {
-    const jackpotDB = new JackpotDB();
-    const assets = await jackpotDB.getAssets("default");
-    // console.log(assets);
+  async _show(gifts, state) {
+    const assets = state;
     this.giftImgs = assets.url;
-    // console.log(Array.from(this.giftImgs));
     this.giftNames = assets.name;
-    // console.log(this.giftNames);
     for (let i = 0; i < gifts.length; i++) {
       const img = document.createElement("img");
       img.src = this.giftImgs[i];
@@ -50,6 +46,17 @@ export class Gifts {
       gifts[i].appendChild(img);
       gifts[i].appendChild(p);
     }
-    // await new Promise(resolve => {});
+  }
+
+  async show(gifts = this.get()) {
+    const jackpotDB = new JackpotDB();
+    this._show(gifts, await jackpotDB.getAssets("default"));
+  }
+
+  async show4Creator(gifts = this.get()) {
+    const jackpotDB = new JackpotDB();
+    const assets = await jackpotDB.getAssets4Creator("default");
+    this._show(gifts, assets);
+    return assets;
   }
 }

@@ -7,6 +7,8 @@ export class JackpotDB extends DB {
     this.updateURL = "https://qczebs.fn.thelarkcloud.com/updateInJackpotTable";
     this.findAllURL =
       "https://qczebs.fn.thelarkcloud.com/findAllFromJackpotTable";
+    this.findAll4CreatorURL =
+      "https://qczebs.fn.thelarkcloud.com/findAll4CreatorFromJackpotTable";
   }
 
   getRandomNum = async (val) => {
@@ -25,12 +27,20 @@ export class JackpotDB extends DB {
     return res;
   };
 
-  updateImg = async (val) => {
-    let res = await this._uploadFile(this.updateURL, {
-      belongTo: "default",
-      urls: val,
+  getAssets4Creator = async (val) => {
+    let res = await this._sendByPost(this.findAll4CreatorURL, {
+      belongTo: val,
     });
     res = await res.json();
     return res;
   };
+
+  // updateImg = async (val) => {
+  //   let res = await this._uploadFile(this.updateURL, {
+  //     belongTo: "default",
+  //     urls: val,
+  //   });
+  //   res = await res.json();
+  //   return res;
+  // };
 }

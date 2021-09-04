@@ -134,7 +134,13 @@
     </div>
     <main>
       <section class="describe">
-        <h1><span class="title">幸运抽奖</span></h1>
+        <h1>
+          <span class="title">幸运抽奖样式预览</span>
+          <!-- <br>
+          <span class="minNum">*中奖概率无法提前预览效果</span>
+          <br>
+          <span class="minNum">*最终版点击“保存”才生效</span> -->
+        </h1>
         <p class="minNum">当前矿石数：<span class="curMin"></span>💎</p>
       </section>
       <section id="gainList" class="gainList">
@@ -234,19 +240,26 @@
           <table>
             <tr>
               <td>当前矿石数:</td>
-              <td><input type="text" class="mineralInput"/></td>
+              <td><input type="text" id="total" class="mineralInput"/></td>
             </tr>
             <tr>
               <td>每次消耗矿石数:</td>
-              <td><input type="text" class="mineralInput"/></td>
+              <td><input type="text" id="unit" class="mineralInput"/></td>
             </tr>
             <tr>
               <td rowspan="2">
-                <button id="makeSure">确定</button>
-
+                <button id="save">保存</button>
               </td>
             </tr>
           </table>
+        </div>
+        <div class="giftSet">
+          <br>
+          <span>*中奖概率无法提前预览效果</span>
+          <br>
+          <span>*最终版点击“保存”才生效</span>
+          <br>
+          <span>*所有中奖概率累加>1会报错</span>
         </div>
     <script type="module" src="./js/main4Creator.js"></script>
   </body>

@@ -3,15 +3,17 @@ import { Mineral } from "./modules/Mineral.js";
 import { Core } from "./modules/Core.js";
 import { CurrencyDB } from "./modules/CurrencyDB.js";
 import { Percentage } from "./modules/Percentage.js";
+import { Handle } from "./modules/Handle.js";
 
 let isLoaded = false;
 const IsLoaded = () => isLoaded;
 
 // UI初始化
-const initUI = async (gifts, mineral) => {
-  await gifts.show();
+const initUI = async (gifts, mineral, handle) => {
+  const { rate: rates, unit, total } = await gifts.show4Creator();
   mineral.showTotal();
   mineral.showUnit();
+  handle.showDefault(new Gifts().get(), rates, unit, total);
   isLoaded = true;
 };
 
@@ -53,9 +55,17 @@ const init = async () => {
   // 矿石相关业务封装
   const mineral = new Mineral(await currencyDB.getMinerInfo("default"));
   // 抽奖相关业务封装
-  const luckyDraw = new Core(new Gifts().get());
+  const giftData = gifts.get();
+  const luckyDraw = new Core(giftData);
+  // 手柄相关业务封装
+  const handle = new Handle();
   loading();
-  initUI(gifts, mineral);
+  await initUI(gifts, mineral, handle);
+  handle.handleBlur(giftData);
+  handle.previewImg(giftData);
+  document.getElementById("save").addEventListener("click", function () {
+    handle.uploadAll();
+  });
   const drawDom = document.querySelector(".luckyDraw");
   drawDom.addEventListener("click", () => handleRun(luckyDraw, mineral));
 };
