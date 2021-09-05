@@ -21,6 +21,12 @@
   margin-bottom: 15px;
 }
 
+.handleLeft .container .giftSet .giftName,
+.handleRight .container .giftSet .giftName {
+  width: 148px;
+  text-align: center;
+}
+
 .handleLeft {
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
@@ -51,6 +57,11 @@ input[type="file"] {
 
 .rate {
   width: 70px;
+  text-align: right;
+}
+
+.rate ~ input {
+  margin-left: 64px;
 }
 
 .mineralInput {

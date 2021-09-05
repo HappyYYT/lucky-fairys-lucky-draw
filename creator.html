@@ -18,12 +18,16 @@
             <tr>
               <td rowspan="3">奖池1：</td>
               <td>
-                <input type="file" class="fileSelect" accept="image/*" />
+                <form>
+                  <input type="file" class="fileSelect" accept="image/*" />
+                  <input type="reset" class="fileReset" value="重置">
+                </form>
               </td>
             </tr>
             <tr>
               <td>
                 <input type="text" class="giftName" placeholder="奖品名" />
+                <!-- <input type="button" value="还原默认"> -->
               </td>
             </tr>
             <tr>
@@ -34,6 +38,7 @@
                   placeholder="中奖概率"
                   value="12.5"
                 /><span class="unit">%</span>
+                <!-- <input type="button" value="还原默认"> -->
               </td>
             </tr>
           </table>
@@ -43,7 +48,10 @@
             <tr>
               <td rowspan="3">奖池2：</td>
               <td>
-                <input type="file" class="fileSelect" accept="image/*" />
+                <form>
+                  <input type="file" class="fileSelect" accept="image/*" />
+                  <input type="reset" class="fileReset" value="重置">
+                </form>
               </td>
             </tr>
             <tr>
@@ -66,7 +74,10 @@
             <tr>
               <td rowspan="3">奖池3：</td>
               <td>
-                <input type="file" class="fileSelect" accept="image/*" />
+                <form>
+                  <input type="file" class="fileSelect" accept="image/*" />
+                  <input type="reset" class="fileReset" value="重置">
+                </form>
               </td>
             </tr>
             <tr>
@@ -89,7 +100,10 @@
             <tr>
               <td rowspan="3">奖池4：</td>
               <td>
-                <input type="file" class="fileSelect" accept="image/*" />
+                <form>
+                  <input type="file" class="fileSelect" accept="image/*" />
+                  <input type="reset" class="fileReset" value="重置">
+                </form>
               </td>
             </tr>
             <tr>
@@ -112,7 +126,10 @@
             <tr>
               <td rowspan="3">奖池5：</td>
               <td>
-                <input type="file" class="fileSelect" accept="image/*" />
+                <form>
+                  <input type="file" class="fileSelect" accept="image/*" />
+                  <input type="reset" class="fileReset" value="重置">
+                </form>
               </td>
             </tr>
             <tr>
@@ -136,10 +153,6 @@
       <section class="describe">
         <h1>
           <span class="title">幸运抽奖样式预览</span>
-          <!-- <br>
-          <span class="minNum">*中奖概率无法提前预览效果</span>
-          <br>
-          <span class="minNum">*最终版点击“保存”才生效</span> -->
         </h1>
         <p class="minNum">当前矿石数：<span class="curMin"></span>💎</p>
       </section>
@@ -172,7 +185,10 @@
             <tr>
               <td rowspan="3">奖池6：</td>
               <td>
-                <input type="file" class="fileSelect" accept="image/*" />
+                <form>
+                  <input type="file" class="fileSelect" accept="image/*" />
+                  <input type="reset" class="fileReset" value="重置">
+                </form>
               </td>
             </tr>
             <tr>
@@ -195,7 +211,10 @@
             <tr>
               <td rowspan="3">奖池7：</td>
               <td>
-                <input type="file" class="fileSelect" accept="image/*" />
+                <form>
+                  <input type="file" class="fileSelect" accept="image/*" />
+                  <input type="reset" class="fileReset" value="重置">
+                </form>
               </td>
             </tr>
             <tr>
@@ -218,7 +237,10 @@
             <tr>
               <td rowspan="3">奖池8：</td>
               <td>
-                <input type="file" class="fileSelect" accept="image/*" />
+                <form>
+                  <input type="file" class="fileSelect" accept="image/*" />
+                  <input type="reset" class="fileReset" value="重置">
+                </form>
               </td>
             </tr>
             <tr>
@@ -249,6 +271,7 @@
             <tr>
               <td rowspan="2">
                 <button id="save">保存</button>
+                <!-- <button>一键还原默认</button> -->
               </td>
             </tr>
           </table>
@@ -257,9 +280,11 @@
           <br>
           <span>*中奖概率无法提前预览效果</span>
           <br>
+          <span>*上传图片的最佳比例为1:1</span>
+          <br>
           <span>*最终版点击“保存”才生效</span>
           <br>
-          <span>*所有中奖概率累加>1会报错</span>
+          <span>*所有中奖概率相加≠1会报错</span>
         </div>
     <script type="module" src="./js/main4Creator.js"></script>
   </body>

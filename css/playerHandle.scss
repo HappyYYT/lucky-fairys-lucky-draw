@@ -15,6 +15,11 @@
 
     .giftSet {
       margin-bottom: 15px;
+
+      .giftName {
+        width: 148px;
+        text-align: center;
+      }
     }
   }
 }
@@ -49,6 +54,11 @@ input[type="file"] {
 
 .rate {
   width: 70px;
+  text-align: right;
+
+  & ~ input {
+    margin-left: 64px;
+  }
 }
 
 .mineralInput {

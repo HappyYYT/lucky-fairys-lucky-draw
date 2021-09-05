@@ -1,5 +1,3 @@
-import { JackpotDB } from "./JackpotDB.js";
-
 export class Images {
   constructor() {
     this.fileSelArr = Array.from(document.querySelectorAll(".fileSelect"));
@@ -31,18 +29,6 @@ export class Images {
     }
   }
 
-  // _filledImgUpload() {
-  //   // console.log("this.urls", this.urls);
-  //   if (Object.keys(this.urls).length < this.file.length) {
-  //     return setTimeout(() => this._filledImgUpload(), 0);
-  //   }
-  //   // console.log("urls", Object.values(this.urls));
-  //   const jackpotDB = new JackpotDB();
-  //   jackpotDB.updateImg(Object.values(this.urls));
-  // }
-
-  // _amongImgUpload() {}
-
   async upload(giftNameInputs, giftRateInputs, total, unit) {
     const urls = await this._uploadImgs();
     console.log(urls);
@@ -51,7 +37,16 @@ export class Images {
     console.log(names, rates);
     const totalVal = total.value;
     const unitVal = unit.value;
-    const jackpotDB = new JackpotDB();
+    let gifts = new Array(8).fill(null);
+    gifts = gifts.map((item, index) => ({
+      name: names[index],
+      content: urls[index] === undefined ? "" : urls[index],
+      rate: rates[index],
+    }));
+    const mineral = {};
+    mineral.total = totalVal;
+    mineral.unit = unitVal;
+
     // {
     //   gifts: [
     //     {
@@ -66,8 +61,7 @@ export class Images {
     //     unit: 100,
     //   }
     // }
-    return { names, urls, rates, totalVal, unitVal };
-    // jackpotDB.updateImg(Object.values(this.urls));
+    return { gifts, mineral };
   }
 
   async _uploadImgs() {
@@ -87,10 +81,7 @@ export class Images {
   }
 
   _uploadNames(giftNameInputs) {
-    // const names = giftNameInputs.map((item) => (item = item.value));
-    // console.log(names);
     return giftNameInputs.map((item) => (item = item.value));
-    // console.log(giftNameInputs);
   }
 
   _uploadRates(giftRateInputs) {

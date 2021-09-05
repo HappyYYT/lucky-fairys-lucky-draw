@@ -7,10 +7,13 @@ import { Handle } from "./modules/Handle.js";
 
 let isLoaded = false;
 const IsLoaded = () => isLoaded;
+let defUrls;
 
 // UI初始化
 const initUI = async (gifts, mineral, handle) => {
-  const { rate: rates, unit, total } = await gifts.show4Creator();
+  const { rate: rates, url: urls, unit, total } = await gifts.show4Creator();
+  defUrls = urls;
+  console.log(urls);
   mineral.showTotal();
   mineral.showUnit();
   handle.showDefault(new Gifts().get(), rates, unit, total);
@@ -63,11 +66,33 @@ const init = async () => {
   await initUI(gifts, mineral, handle);
   handle.handleBlur(giftData);
   handle.previewImg(giftData);
-  document.getElementById("save").addEventListener("click", function () {
-    handle.uploadAll();
+  document.getElementById("save").addEventListener("click", async function () {
+    if (handle.checkSumRateIs100()) {
+      const isSucceed = await handle.uploadAll("default");
+      if (isSucceed) {
+        alert("操作成功！刷新即可使用");
+      }
+    } else {
+      alert("所有中奖概率相加≠1，操作失败");
+    }
   });
   const drawDom = document.querySelector(".luckyDraw");
-  drawDom.addEventListener("click", () => handleRun(luckyDraw, mineral));
+
+  drawDom.addEventListener("click", () => {
+    const curTotal = parseFloat(document.querySelector(".curMin").innerText);
+    const curUnit = parseFloat(document.querySelector(".perMin").innerText);
+    const curMineral = new Mineral({ total: curTotal, unit: curUnit });
+    handleRun(luckyDraw, curMineral);
+  });
+
+  const resetBtns = document.querySelectorAll(".fileReset");
+  for (let i = 0; i < resetBtns.length; i++) {
+    resetBtns[i].addEventListener("click", () => {
+      if (giftData[i].querySelector("img").src !== defUrls[i]) {
+        giftData[i].querySelector("img").src = defUrls[i];
+      }
+    });
+  }
 };
 
 init();
