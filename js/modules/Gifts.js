@@ -1,3 +1,7 @@
+/**
+ * 奖池类
+ *
+ */
 import { JackpotDB } from "./JackpotDB.js";
 
 export class Gifts {
@@ -26,6 +30,7 @@ export class Gifts {
     ];
   }
 
+  // 顺时针获取gift的dom
   get() {
     const gifts = Array.from(document.querySelectorAll(".gift")).sort(
       (el1, el2) => el1.getAttribute("order") - el2.getAttribute("order")
@@ -33,6 +38,7 @@ export class Gifts {
     return gifts;
   }
 
+  // 生成奖池子节点(图片、名字)
   async _show(gifts, state) {
     const assets = state;
     this.giftImgs = assets.url;
@@ -48,11 +54,13 @@ export class Gifts {
     }
   }
 
+  // 显示从数据库获取的奖池资源
   async show(gifts = this.get()) {
     const jackpotDB = new JackpotDB();
     this._show(gifts, await jackpotDB.getAssets("default"));
   }
 
+  // 专门适应creator的显示从数据库获取的奖池资源
   async show4Creator(gifts = this.get()) {
     const jackpotDB = new JackpotDB();
     const assets = await jackpotDB.getAssets4Creator("default");

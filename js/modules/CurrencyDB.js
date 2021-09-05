@@ -1,3 +1,7 @@
+/**
+ * 连接后台数据库的CurrencyDB类
+ * 继承自通用DB类
+ */
 import { DB } from "./DB.js";
 
 export class CurrencyDB extends DB {
@@ -13,38 +17,12 @@ export class CurrencyDB extends DB {
       "https://qczebs.fn.thelarkcloud.com/updateUnitInCurrencyTable";
   }
 
-  // _sendByPost = async (url, obj) => {
-  //   const res = await fetch(url, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-type": "application/json",
-  //     },
-  //     body: JSON.stringify(obj),
-  //   });
-  //   return res;
-  // };
-
+  // 获取矿石相关资源
   getMinerInfo = async (val) => {
     const res = await this._sendByPost(this.findOneFromCurrencyTableURL, {
       belongTo: val,
     });
     const { total, unit } = (await res.json()).result;
     return { total, unit };
-  };
-
-  updateTotalBy = async (cod, val) => {
-    const res = await this._sendByPost(this.updateTotalInCurrencyTableURL, {
-      belongTo: cod,
-      total: val,
-    });
-    return res;
-  };
-
-  updateUnitBy = async (cod, val) => {
-    const res = await this._sendByPost(this.updateUnitInCurrencyTableURL, {
-      belongTo: cod,
-      unit: val,
-    });
-    return res;
   };
 }

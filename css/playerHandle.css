@@ -13,7 +13,7 @@ body {
 .handleLeft .container,
 .handleRight .container {
   width: 100%;
-  height: 560px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,3 +1,7 @@
+/**
+ * 核心类（实在不会取名字了）
+ *
+ */
 import { JackpotDB } from "./JackpotDB.js";
 import { dateFormatter } from "../common.js";
 
@@ -17,15 +21,17 @@ export class Core {
     this.jackpotDB = new JackpotDB();
   }
 
+  // 判断抽奖是否在运行中
   checkRunning() {
     return !this.isRunning;
   }
 
+  // 抽奖内部逻辑
   _run(start = 0, end) {
     this.isRunning = true;
     const speed = Math.round((20 / 12) ** 6) * 5 + 25; // 130
     setTimeout(() => {
-      const nextPointer = start & this.base; // (0, 7)
+      const nextPointer = start & this.base; // 结果范围为(0, 7)
       // 重置
       this.grids.forEach((grid) => (grid.style.background = ""));
       this.grids[nextPointer].style.background = "#005479";
@@ -33,7 +39,6 @@ export class Core {
         this._run(start + 1, end);
       } else {
         setTimeout(() => {
-          console.log(nextPointer);
           const name = this.grids[nextPointer].querySelector("p").innerText;
           alert(`恭喜你获得了${name}！请联系管理员兑换。`);
           this.isRunning = false;
@@ -44,11 +49,13 @@ export class Core {
     }, speed);
   }
 
+  // 运行抽奖逻辑
   async run() {
     const res = await this.jackpotDB.getRandomNum();
     this._run(0, res);
   }
 
+  // 生成中奖历史列表
   createGainList() {
     const ul = document.createElement("ul");
     for (let [key, value] of this.map) {
@@ -64,6 +71,7 @@ export class Core {
     return ul;
   }
 
+  // 显示中奖历史列表
   showGainList() {
     if (this.map.size !== 0) {
       const gainListContainer = document.querySelector(".gainList");

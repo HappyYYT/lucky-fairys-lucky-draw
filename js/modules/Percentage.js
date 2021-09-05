@@ -1,3 +1,7 @@
+/**
+ * 百分比类
+ * 参考来自https://github.com/bradtraversy/50projects50days/tree/master/blurry-loading
+ */
 export class Percentage {
   constructor(getIsLoad, loadText, bg) {
     this.getIsLoad = getIsLoad;
@@ -5,11 +9,13 @@ export class Percentage {
     this.bg = bg;
     this.load = 0;
     this.interval = 300;
+    // 只要创建Percentage对象就会执行blurring方法
     this.blurring();
   }
 
   blurring = () => {
     this.load++;
+    // 根据资源是否加载完毕来提升百分比递增速度
     if (this.load === 25 && this.getIsLoad()) {
       this.interval = 100;
     }
@@ -33,12 +39,12 @@ export class Percentage {
     this.loadText.innerText = `${this.load}%`;
     this.loadText.style.opacity = this.scale(this.load, 0, 100, 1, 0);
     this.bg.style.opacity = this.scale(this.load, 0, 100, 1, 0);
-    // this.bg.style.filter = `blur(${this.scale(this.load, 0, 100, 30, 0)}px)`;
     setTimeout(() => {
       this.blurring();
     }, this.interval);
   };
 
+  // https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
   scale(num, in_min, in_max, out_min, out_max) {
     return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
   }

@@ -1,9 +1,12 @@
+/**
+ * 首页类
+ * 待升级为真正的登录
+ */
 export class Login {
-  constructor() {
-    // this.roles = document.querySelectorAll("[name = ident]");
-  }
+  constructor() {}
 
-  switchRoles(role) {
+  // 切换登录角色
+  static switchRoles(role) {
     switch (role) {
       case "player":
         return "./player.html";
@@ -13,12 +16,4 @@ export class Login {
         return;
     }
   }
-
-  //   toggleLink() {
-  //     for (let i = 0; i < this.roles.length; i++) {
-  //       if (this.roles[i].checked) {
-  //         return this._switchRoles(this.roles[i].id);
-  //       }
-  //     }
-  //   }
 }

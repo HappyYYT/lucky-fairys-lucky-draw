@@ -4,14 +4,18 @@ import { Core } from "./modules/Core.js";
 import { CurrencyDB } from "./modules/CurrencyDB.js";
 import { Percentage } from "./modules/Percentage.js";
 
+// 判断资源是否获取完毕
 let isLoaded = false;
 const IsLoaded = () => isLoaded;
 
 // UI初始化
 const initUI = async (gifts, mineral) => {
+  // 奖池相关资源初始显示
   await gifts.show();
+  // 矿石相关资源初始显示
   mineral.showTotal();
   mineral.showUnit();
+  // 资源获取完毕
   isLoaded = true;
 };
 
@@ -45,8 +49,9 @@ const handleRun = (luckyDraw, mineral) => {
   }
 };
 
+// 入口方法
 const init = async () => {
-  // 所有的礼物业务封装
+  // 奖池相关业务封装
   const gifts = new Gifts();
   // 连接远程数据库相关封装
   const currencyDB = new CurrencyDB();
@@ -54,8 +59,11 @@ const init = async () => {
   const mineral = new Mineral(await currencyDB.getMinerInfo("default"));
   // 抽奖相关业务封装
   const luckyDraw = new Core(new Gifts().get());
+  // 百分比加载
   loading();
+  // 初始显示
   initUI(gifts, mineral);
+  // 抽奖逻辑
   const drawDom = document.querySelector(".luckyDraw");
   drawDom.addEventListener("click", () => handleRun(luckyDraw, mineral));
 };

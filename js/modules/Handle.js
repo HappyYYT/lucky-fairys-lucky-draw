@@ -1,3 +1,7 @@
+/**
+ * 手柄类
+ *
+ */
 import { Images } from "./Images.js";
 import { JackpotDB } from "./JackpotDB.js";
 
@@ -10,6 +14,7 @@ export class Handle {
     this.images;
   }
 
+  // 判断总概率是否为100%
   checkSumRateIs100() {
     const sum = this.giftRateInputs.reduce(
       (ac, cu) => ac + parseFloat(cu.value),
@@ -21,6 +26,7 @@ export class Handle {
     return true;
   }
 
+  // 显示数据库所有的原有配置
   showDefault(gifts, rates, unit, total) {
     const giftsNames = gifts.map((item) => item.querySelector("p").innerText);
     this.giftNameInputs = Array.from(document.querySelectorAll(".giftName"));
@@ -31,16 +37,13 @@ export class Handle {
     this.giftRateInputs.map((item, index) => {
       item.value = rates[index];
     });
-    // console.log(
-    //   "this.giftRateInputs",
-    //   this.giftRateInputs.reduce((ac, cu) => ac + parseFloat(cu.value), 0)
-    // );
     this.total = document.getElementById("total");
     this.unit = document.getElementById("unit");
     this.total.value = total;
     this.unit.value = unit;
   }
 
+  // blur事件，对应显示修改的文本
   handleBlur(gifts) {
     this.giftNameInputs.map((item, index) => {
       item.addEventListener("input", (e) => {
@@ -55,11 +58,13 @@ export class Handle {
     });
   }
 
+  // 图片预览
   previewImg(gifts) {
     this.images = new Images();
     this.images.preview(gifts);
   }
 
+  // 上传资源
   async uploadAll(val) {
     const res = await this.images.upload(
       this.giftNameInputs,
@@ -69,7 +74,6 @@ export class Handle {
     );
     const jackpotDB = new JackpotDB();
     const success = await jackpotDB.uploadAll(val, res);
-    console.log("success", success);
     return success;
   }
 }

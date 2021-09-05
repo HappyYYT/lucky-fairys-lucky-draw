@@ -5,18 +5,23 @@ import { CurrencyDB } from "./modules/CurrencyDB.js";
 import { Percentage } from "./modules/Percentage.js";
 import { Handle } from "./modules/Handle.js";
 
+// 判断资源是否获取完毕
 let isLoaded = false;
 const IsLoaded = () => isLoaded;
+// 初始图片路径
 let defUrls;
 
 // UI初始化
 const initUI = async (gifts, mineral, handle) => {
+  // 奖池相关资源初始显示
   const { rate: rates, url: urls, unit, total } = await gifts.show4Creator();
+  // 记录初始图片路径
   defUrls = urls;
-  console.log(urls);
+  // 矿石相关资源初始显示
   mineral.showTotal();
   mineral.showUnit();
   handle.showDefault(new Gifts().get(), rates, unit, total);
+  // 资源获取完毕
   isLoaded = true;
 };
 
@@ -50,8 +55,9 @@ const handleRun = (luckyDraw, mineral) => {
   }
 };
 
+// 入口方法
 const init = async () => {
-  // 所有的礼物业务封装
+  // 奖池相关业务封装
   const gifts = new Gifts();
   // 连接远程数据库相关封装
   const currencyDB = new CurrencyDB();
@@ -62,10 +68,15 @@ const init = async () => {
   const luckyDraw = new Core(giftData);
   // 手柄相关业务封装
   const handle = new Handle();
+  // 百分比加载
   loading();
+  // 初始显示
   await initUI(gifts, mineral, handle);
+  // 修改文本
   handle.handleBlur(giftData);
+  // 选择图片、预览图片
   handle.previewImg(giftData);
+  // 点击保存事件
   document.getElementById("save").addEventListener("click", async function () {
     if (handle.checkSumRateIs100()) {
       const isSucceed = await handle.uploadAll("default");
@@ -76,17 +87,20 @@ const init = async () => {
       alert("所有中奖概率相加≠1，操作失败");
     }
   });
+  // 抽奖逻辑
   const drawDom = document.querySelector(".luckyDraw");
-
   drawDom.addEventListener("click", () => {
+    // 重新读取矿石数量信息
     const curTotal = parseFloat(document.querySelector(".curMin").innerText);
     const curUnit = parseFloat(document.querySelector(".perMin").innerText);
     const curMineral = new Mineral({ total: curTotal, unit: curUnit });
     handleRun(luckyDraw, curMineral);
   });
 
+  // 重置图片
   const resetBtns = document.querySelectorAll(".fileReset");
   for (let i = 0; i < resetBtns.length; i++) {
+    // 点击“重置”，图片预览还原至初始图片
     resetBtns[i].addEventListener("click", () => {
       if (giftData[i].querySelector("img").src !== defUrls[i]) {
         giftData[i].querySelector("img").src = defUrls[i];

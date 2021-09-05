@@ -1,3 +1,7 @@
+/**
+ * 看板娘相关方法
+ * 修改来自https://github.com/stevenjoezhang/live2d-widget
+ */
 window.addEventListener("load", () => {
   "use strict";
   if (!CSS.supports("clip-path", "circle(120px at center)")) {
@@ -67,7 +71,7 @@ window.addEventListener("load", () => {
       .then((result) => {
         alert("「" + result.hitokoto + "」——" + result.from);
       });
-      e.preventDefault();
+    e.preventDefault();
   });
 
   document.getElementById("refresh").addEventListener("click", (e) => {
