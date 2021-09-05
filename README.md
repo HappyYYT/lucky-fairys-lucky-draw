@@ -17,22 +17,22 @@ The Final Task Of The YOUTH CAMP Of The ByteDance💎.
 ##### Notice：This project does not support legacy browsers such as IE 11.
 
 # 线上Demo
-[Welcome to lucky-fairys-lucky-draw](https://lucky-fairys-lucky-draw.web.cloudendpoint.cn/)
+:point_right:[Welcome to lucky-fairys-lucky-draw](https://lucky-fairys-lucky-draw.web.cloudendpoint.cn/)
 
 ![index.html(Suitable for mobile and PC terminals)](https://github.com/HappyYYT/lucky-fairys-lucky-draw/blob/main/img/1-900x780.png)
-##### index.html适配移动和PC端
-##### index.html is suitable for mobile and PC terminals
+##### index.html适配移动和PC端。:iphone::computer:
+##### index.html is suitable for mobile and PC terminals.:iphone::computer:
 
 ![play.html(Suitable for mobile and PC terminals)](https://github.com/HappyYYT/lucky-fairys-lucky-draw/blob/main/img/3-900x870.png)
-##### player.html适配移动和PC端
-##### player.html is suitable for mobile and PC terminals
+##### player.html适配移动和PC端。:iphone::computer:
+##### player.html is suitable for mobile and PC terminals.:iphone::computer:
 
 ![creator.html(PC only)](https://github.com/HappyYYT/lucky-fairys-lucky-draw/blob/main/img/4-1900x890.png)
-##### creator.html只适配PC端
-##### creator.html is PC only
+##### creator.html只适配PC端。:computer:
+##### creator.html is PC only.:computer:
 
 # 部署平台
-[轻服务-5分钟快速构建应用](https://qingfuwu.cn/)
+:point_right:[轻服务-5分钟快速构建应用](https://qingfuwu.cn/)
 
 #### 接口设计
 | 接口 | 参数 | 返回值 |
@@ -40,8 +40,8 @@ The Final Task Of The YOUTH CAMP Of The ByteDance💎.
 |   getRandomNum   |    belongTo:str   |    抽奖结果   |
 |   findAllFromJackpotTable   |    belongTo:str  |   奖品名字、图片路径  |
 |   findAll4CreatorFromJackpotTable   |    belongTo:str  |（针对creator配置页面）奖品名字、图片路径、中奖概率、单次消耗矿石数、总矿石数  |
-|   updateMainInJackpotTable   |    belongTo:str, gifts:arr[obj], mineral:obj  | true  |
-#### 数据库
+|   updateMainInJackpotTable   |    belongTo:str, gifts:arr[obj], mineral:obj  | 是否更新成功，成功则返回true  |
+#### 数据库设计
 奖池：jackpot
 | 参数 | 类型 | 
 | ---- | ----  |
