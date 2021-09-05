@@ -32,5 +32,35 @@ The Final Task Of The YOUTH CAMP Of The ByteDance💎.
 ##### creator.html is PC only
 
 # 部署平台
-[轻服务](https://qingfuwu.cn/)
+[轻服务-5分钟快速构建应用](https://qingfuwu.cn/)
 
+#### 接口设计
+| 接口 | 参数 | 返回值 |
+| ---- | ----  | ----  |
+|   getRandomNum   |    belongTo:str   |    抽奖结果   |
+|   findAllFromJackpotTable   |    belongTo:str  |   奖品名字、图片路径  |
+|   findAll4CreatorFromJackpotTable   |    belongTo:str  |（针对creator配置页面）奖品名字、图片路径、中奖概率、单次消耗矿石数、总矿石数  |
+|   updateMainInJackpotTable   |    belongTo:str, gifts:arr[obj], mineral:obj  | true  |
+#### 数据库
+奖池：jackpot
+| 参数 | 类型 | 
+| ---- | ----  |
+| id | Number | 
+| name | String | 
+| rate | String | 
+| url | String | 
+| belongTo | String | 
+
+货币：currency
+| 参数 | 类型 | 
+| ---- | ----  |
+| id | Number | 
+| total | Number | 
+| unit | Number | 
+| belongTo | String | 
+
+中奖历史：history
+| 参数 | 类型 | 
+| ---- | ----  |
+| belongTo | String | 
+| name | String | 
