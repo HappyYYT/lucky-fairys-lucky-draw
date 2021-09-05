@@ -1,3 +1,7 @@
+body {
+  min-width: 1360px;
+}
+
 .handleLeft,
 .handleRight {
   width: 20%;
@@ -6,7 +10,7 @@
 
   .container {
     width: 100%;
-    height: 520px;
+    height: 560px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,6 +19,11 @@
 
     .giftSet {
       margin-bottom: 15px;
+
+      .title {
+        color: #fff;
+        font-weight: bolder;
+      }
 
       .giftName {
         width: 148px;
@@ -28,6 +37,7 @@
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
   background-color: #00b2d6;
+  border: 12px #00b2d6 outset;
   padding-left: 20px;
 }
 
@@ -35,12 +45,14 @@
   border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
   background-color: #ff554b;
+  border: 12px #ff554b outset;
   padding-right: 20px;
 }
 
 main {
   height: 700px;
   background: #27282d;
+  border: 8px #27282d inset;
 
   .describe {
     color: #e1e1e1;
@@ -49,7 +61,40 @@ main {
 }
 
 input[type="file"] {
-  width: 180px;
+  width: 112px;
+  height: 28px;
+  border-radius: 3px;
+  text-align: center;
+  border: #888 outset;
+  color: #fff;
+  background: #888;
+  cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+input[type="file"]::before {
+  content: "点击选择图片";
+  display: inline-block;
+  outline: none;
+}
+
+input[type="text"] {
+  background: #292929;
+  // color: #7e7e7e;
+  color: #fffdd0;
+  border: #444 6px outset;
+  border-radius: 5px;
+}
+
+input[type="reset"] {
+  width: 36px;
+  height: 28px;
+  border-radius: 3px;
+  border: outset;
+  cursor: pointer;
 }
 
 .rate {
@@ -63,4 +108,15 @@ input[type="file"] {
 
 .mineralInput {
   width: 120px;
+}
+
+#save {
+  width: 84px;
+  height: 40px;
+  color: #e1e1e1;
+  font-weight: bolder;
+  letter-spacing: 5px;
+  background: #292929;
+  border-radius: 5px;
+  border: #444 5px outset;
 }

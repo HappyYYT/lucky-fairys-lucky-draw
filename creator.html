@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,7 +16,7 @@
         <div class="giftSet">
           <table>
             <tr>
-              <td rowspan="3">奖池1：</td>
+              <td class="title" rowspan="3">奖池1：</td>
               <td>
                 <form>
                   <input type="file" class="fileSelect" accept="image/*" />
@@ -46,7 +46,7 @@
         <div class="giftSet">
           <table>
             <tr>
-              <td rowspan="3">奖池2：</td>
+              <td class="title" rowspan="3">奖池2：</td>
               <td>
                 <form>
                   <input type="file" class="fileSelect" accept="image/*" />
@@ -72,7 +72,7 @@
         <div class="giftSet">
           <table>
             <tr>
-              <td rowspan="3">奖池3：</td>
+              <td class="title" rowspan="3">奖池3：</td>
               <td>
                 <form>
                   <input type="file" class="fileSelect" accept="image/*" />
@@ -98,7 +98,7 @@
         <div class="giftSet">
           <table>
             <tr>
-              <td rowspan="3">奖池4：</td>
+              <td class="title" rowspan="3">奖池4：</td>
               <td>
                 <form>
                   <input type="file" class="fileSelect" accept="image/*" />
@@ -124,7 +124,7 @@
         <div class="giftSet">
           <table>
             <tr>
-              <td rowspan="3">奖池5：</td>
+              <td class="title" rowspan="3">奖池5：</td>
               <td>
                 <form>
                   <input type="file" class="fileSelect" accept="image/*" />
@@ -183,7 +183,7 @@
         <div class="giftSet">
           <table>
             <tr>
-              <td rowspan="3">奖池6：</td>
+              <td class="title" rowspan="3">奖池6：</td>
               <td>
                 <form>
                   <input type="file" class="fileSelect" accept="image/*" />
@@ -209,7 +209,7 @@
         <div class="giftSet">
           <table>
             <tr>
-              <td rowspan="3">奖池7：</td>
+              <td class="title" rowspan="3">奖池7：</td>
               <td>
                 <form>
                   <input type="file" class="fileSelect" accept="image/*" />
@@ -235,7 +235,7 @@
         <div class="giftSet">
           <table>
             <tr>
-              <td rowspan="3">奖池8：</td>
+              <td class="title" rowspan="3">奖池8：</td>
               <td>
                 <form>
                   <input type="file" class="fileSelect" accept="image/*" />
@@ -261,23 +261,22 @@
         <div class="giftSet">
           <table>
             <tr>
-              <td>当前矿石数:</td>
+              <td class="title">当前矿石数:</td>
               <td><input type="text" id="total" class="mineralInput"/></td>
             </tr>
             <tr>
-              <td>每次消耗矿石数:</td>
+              <td class="title">每次消耗矿石数:</td>
               <td><input type="text" id="unit" class="mineralInput"/></td>
             </tr>
-            <tr>
-              <td rowspan="2">
+            <!-- <tr>
+              <td colspan="2">
                 <button id="save">保存</button>
-                <!-- <button>一键还原默认</button> -->
+                <button>一键还原默认</button>
               </td>
-            </tr>
+            </tr> -->
           </table>
         </div>
         <div class="giftSet">
-          <br>
           <span>*中奖概率无法提前预览效果</span>
           <br>
           <span>*上传图片的最佳比例为1:1</span>
@@ -285,6 +284,9 @@
           <span>*最终版点击“保存”才生效</span>
           <br>
           <span>*所有中奖概率相加≠1会报错</span>
+        </div>
+        <div class="giftSet">
+          <button id="save">保存</button>
         </div>
     <script type="module" src="./js/main4Creator.js"></script>
   </body>
