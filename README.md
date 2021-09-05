@@ -64,3 +64,10 @@ The Final Task Of The YOUTH CAMP Of The ByteDance💎.
 | ---- | ----  |
 | belongTo | String | 
 | name | String | 
+
+# 参考
+[stevenjoezhang/live2d-widget-把萌萌哒的看板娘抱回家 (ノ≧∇≦)ノ | Live2D widget for web platform](https://github.com/stevenjoezhang/live2d-widget)
+
+[bradtraversy/50projects50days/blurry-loading-50+ mini web projects using HTML, CSS & JS](https://github.com/bradtraversy/50projects50days/tree/master/blurry-loading)
+
+[75team/raffle-奇舞团历年年会现场抽奖程序](https://github.com/75team/raffle)
