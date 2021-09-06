@@ -65,6 +65,7 @@ The Final Task Of The YOUTH CAMP Of The ByteDance💎.
 | ---- | ----  |
 | belongTo | String | 
 | name | String | 
+| createdAt(default) | Date | 
 
 # 参考
 [stevenjoezhang/live2d-widget-把萌萌哒的看板娘抱回家 (ノ≧∇≦)ノ | Live2D widget for web platform](https://github.com/stevenjoezhang/live2d-widget)
