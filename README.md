@@ -39,6 +39,7 @@ The Final Task Of The YOUTH CAMP Of The ByteDance💎.
 | ---- | ----  | ----  |
 |   getRandomNum   |    belongTo:str   |    抽奖结果   |
 |   findAllFromJackpotTable   |    belongTo:str  |   奖品名字、图片路径  |
+|   findOneFromCurrencyTable   |    belongTo:str  |   总矿石数、单次消耗矿石数  |
 |   findAll4CreatorFromJackpotTable   |    belongTo:str  |（针对creator配置页面）奖品名字、图片路径、中奖概率、单次消耗矿石数、总矿石数  |
 |   updateMainInJackpotTable   |    belongTo:str, gifts:arr[obj], mineral:obj  | 是否更新成功，成功则返回true  |
 #### 数据库设计
